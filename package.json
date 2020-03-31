@@ -1,18 +1,21 @@
 {
-  "name": "02_SocketIOChatApp",
+  "name": "dropdown-two-line-break",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "homepage": "https://github.com/Sullivan008/JQuery-DropDown_Two_Line_Break",
+  "authors": [
+    "Peter Kozak <kozakpeter0424@gmail.com>"
+  ],
+  "description": "DropDown List with Two Line Break",
+  "main": "index.html",
   "dependencies": {
     "express": "^4.17.1",
     "mongodb": "^3.2.7",
     "nodemon": "^1.19.1",
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.2.0",
+    "bower": "^1.8.8",
+    "laravel-elixir": "6.0.0-18"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
   }
 }
