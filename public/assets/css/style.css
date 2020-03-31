@@ -312,3 +312,7 @@ div#rooms>div>span:hover {
         cursor: pointer;
     }
 /*#endregion*/
+
+textarea[id=message-text] {
+    resize: none!important;
+}
