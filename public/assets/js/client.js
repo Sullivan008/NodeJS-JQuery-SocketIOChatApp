@@ -14,7 +14,13 @@ var chatClient = {
 
         socket.on('setPublicMessages', function(messages) {
             messages.forEach(item => {
-                $("div#public-chat").append("<p><span>" + item.date + "</span> <b>" + item.username + "</b>: " + item.message + "</p>");
+                if(item.username !== localStorage.getItem("username")) {
+                    $("div#public-chat").append("<div class='row justify-content-start'>" +
+                        "<p><span>" + item.date + "</span> <b>" + item.username + "</b>: " + item.message + "</p></div>");
+                } else {
+                    $("div#public-chat").append("<div class='row justify-content-end'>" + 
+                        "<p><span>" + item.date + "</span> <b>" + item.username + "</b>: " + item.message + "</p></div>");
+                }
             });
         });
 
@@ -54,7 +60,14 @@ var chatClient = {
                 }
             }
 
-            $("div#chat-messages div#" + roomId).append("<p><span>" + messageData.date + "</span> <b>" + messageData.username + "</b>: " + messageData.message + "</p>");
+            if(messageData.username !== localStorage.getItem("username")) {
+                $("div#chat-messages div#" + roomId).append("<div class='row justify-content-start'>" +
+                    "<p><span>" + messageData.date + "</span> <b>" + messageData.username + "</b>: " + messageData.message + "</p></div>");
+            } else {
+                $("div#chat-messages div#" + roomId).append("<div class='row justify-content-end'>" + 
+                    "<p><span>" + messageData.date + "</span> <b>" + messageData.username + "</b>: " + messageData.message + "</p></div>");
+            }
+
             $('div.chatroom.active').animate({ scrollTop: $('div.chatroom.active').prop('scrollHeight') }, 1000);
         });
 

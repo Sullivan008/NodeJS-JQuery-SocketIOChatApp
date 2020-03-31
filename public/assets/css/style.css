@@ -23,7 +23,33 @@ body {
     display: inline-block;
     padding: 20px 20px 25px;
     border-radius: 6px;
-    width: calc(100% - 40px);
+    width: calc(100% - 50%);
+    min-width: 100px;
+    position: relative;
+}
+
+#main-inner div.row.justify-content-end p{
+    background-color: #b8ffab;
+    margin-right: 10px;
+    display: inline-block;
+    padding: 20px 20px 25px;
+    border-radius: 6px;
+    width: calc(100% - 54%);
+    min-width: 100px;
+    position: relative;
+}
+
+#main-inner div.row.justify-content-end, #main-inner div.row.justify-content-start {
+    margin-right: 0.1em;
+}
+
+#main-inner div.row.justify-content-start p{
+    background-color: #adcef7;
+    margin-left: 20px;
+    display: inline-block;
+    padding: 20px 20px 25px;
+    border-radius: 6px;
+    width: calc(100% - 50%);
     min-width: 100px;
     position: relative;
 }
