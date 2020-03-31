@@ -1,0 +1,16 @@
+@import "../bower/vendor/bootstrap/scss/bootstrap";
+
+/*#region COMMON Styles*/
+
+@import "../sass/common/body";
+@import "../sass/common/general";
+@import "../sass/common/scrollbar";
+@import "../sass/common/warningModal";
+
+/*#endregion*/
+
+/*#region PARTIAL Styles*/
+
+@import "../sass/partials/partials";
+
+/*#endregion*/

@@ -1,0 +1,44 @@
+.rooms-box {
+    background-color: #fff;
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
+
+div#rooms > div {
+    border: 0px;
+    background: #fff;
+    color: #000;
+    display: inline-block;
+    cursor: pointer;
+    padding: 15px;
+    position: relative;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0px 0px 15px rgba(63, 182, 239, 0.7);
+    margin-right: 25px;
+}
+
+div#rooms > div.active {
+    color: red;
+    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.7);
+}
+
+div#rooms > div.new {
+    color: blue;
+}
+
+div#rooms > div > span {
+    position: absolute;
+    z-index: 10;
+    top: -20px;
+    right: 0px;
+    color: black !important;
+    cursor: pointer;
+    background: #fff;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+}
+
+div#rooms > div > span:hover {
+    color: black;
+}

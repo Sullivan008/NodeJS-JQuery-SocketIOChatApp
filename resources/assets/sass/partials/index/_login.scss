@@ -1,0 +1,66 @@
+#user-data .form-group {
+    background: #fff;
+    border-radius: 11px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+div#user-data {
+    width: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#user-data h1 {
+    font-size: 47px;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+    box-shadow: 0 13px 10px rgba(132, 132, 132, 0.1);
+}
+
+.user-data-body {
+    background-color: #edeff2;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+}
+
+#user-data .btn-primary {
+    border: 0;
+    font-size: 20px;
+    background: linear-gradient(135deg, rgb(195, 236, 82) 0%, rgb(11, 162, 157) 100%);
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 10px;
+}
+
+#user-data .btn-primary:hover {
+    background: linear-gradient(135deg, rgb(250, 217, 97) 0%, rgb(247, 107, 28) 100%);
+    color: #000000;
+    font-weight: bold;
+}
+
+input#user-name {
+    width: 90%;
+    height: 70px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+input#user-name::placeholder {
+    color: #000;
+}
+
+input#user-name::-webkit-input-placeholder {
+    /* Edge */
+    color: #000;
+}
+
+input#user-name:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #000;
+}

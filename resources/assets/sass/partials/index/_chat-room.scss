@@ -1,0 +1,81 @@
+.chat-title-box {
+    background-color: #fff;
+    margin-top: 20px;
+    border-radius: 10px 10px 0 0;
+    padding: 20px 0 15px;
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.chat-title-box h1 {
+    width: 100%;
+    color: #060606;
+    font-size: 30px;
+}
+
+#chat-room p {
+    background-color: #adcef7;
+    margin-left: 20px;
+    display: inline-block;
+    padding: 20px 20px 25px;
+    border-radius: 6px;
+    width: calc(100% - 50%);
+    min-width: 100px;
+    position: relative;
+}
+
+#chat-room div.row.justify-content-end p {
+    background-color: #b8ffab;
+    margin-right: 10px;
+    display: inline-block;
+    padding: 20px 20px 25px;
+    border-radius: 6px;
+    width: calc(100% - 54%);
+    min-width: 100px;
+    position: relative;
+}
+
+#chat-room div.row.justify-content-start p {
+    background-color: #adcef7;
+    margin-left: 20px;
+    display: inline-block;
+    padding: 20px 20px 25px;
+    border-radius: 6px;
+    width: calc(100% - 50%);
+    min-width: 100px;
+    position: relative;
+}
+
+#chat-room div.row.justify-content-end,
+#chat-room div.row.justify-content-start {
+    margin-right: 0.1em;
+}
+
+#chat-room p span {
+    position: absolute;
+    bottom: 3px;
+    right: 15px;
+    color: #737373;
+}
+
+div#chat-room {
+    position: relative;
+    height: 500px;
+}
+
+div.chatroom {
+    width: 100%;
+    height: 500px;
+    background-color: #edeff2;
+    border: 0px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-y: scroll;
+}
+
+div.chatroom.active {
+    z-index: 2;
+}
