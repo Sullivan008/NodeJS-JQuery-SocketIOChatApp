@@ -99,7 +99,10 @@ var chatClient = {
 
                 $('div.chatroom.active').animate({scrollTop: $('div.chatroom.active').prop('scrollHeight')}, 1000);
             } else {
-                alert('You must enter a User Name!');
+                modal.warningModal({
+                    StatusCode: 403,
+                    Reason: "Username is empty",
+                    Details: "You must enter a User Name!"});
             }
         });
 
@@ -145,7 +148,10 @@ var chatClient = {
     
                     event.preventDefault();
                 } else {
-                    alert('You must enter a message');
+                    modal.warningModal({
+                        StatusCode: 403,
+                        Reason: "Message is empty",
+                        Details: "You must enter a message before send it!"});
                 }
             }
         });

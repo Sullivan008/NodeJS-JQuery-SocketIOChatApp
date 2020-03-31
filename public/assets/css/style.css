@@ -286,3 +286,29 @@ div#rooms>div>span:hover {
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
+
+/*#region MODAL STYLES */
+
+.modal-title {
+    color: #a50303;
+}
+
+.modal-body h5 {
+    color: #a50303;
+}
+
+.modal-body div p {
+    color: #a50303;
+}
+
+.close {
+    color: #730000;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #6b0000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+/*#endregion*/
