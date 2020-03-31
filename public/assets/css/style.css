@@ -28,7 +28,7 @@ body {
     position: relative;
 }
 
-#main-inner div.row.justify-content-end p{
+#main-inner div.row.justify-content-end p {
     background-color: #b8ffab;
     margin-right: 10px;
     display: inline-block;
@@ -39,11 +39,12 @@ body {
     position: relative;
 }
 
-#main-inner div.row.justify-content-end, #main-inner div.row.justify-content-start {
+#main-inner div.row.justify-content-end,
+#main-inner div.row.justify-content-start {
     margin-right: 0.1em;
 }
 
-#main-inner div.row.justify-content-start p{
+#main-inner div.row.justify-content-start p {
     background-color: #adcef7;
     margin-left: 20px;
     display: inline-block;
@@ -270,22 +271,22 @@ div#rooms>div>span:hover {
 
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888; 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
 
 /*#region MODAL STYLES */
 
@@ -305,14 +306,15 @@ div#rooms>div>span:hover {
     color: #730000;
 }
 
-    .close:hover,
-    .close:focus {
-        color: #6b0000;
-        text-decoration: none;
-        cursor: pointer;
-    }
+.close:hover,
+.close:focus {
+    color: #6b0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /*#endregion*/
 
 textarea[id=message-text] {
-    resize: none!important;
+    resize: none !important;
 }

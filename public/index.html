@@ -1,105 +1,113 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Style-ok implementálása -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/css/style.css">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>Socket IO - Chat Web Application</title>
-    </head>
+    <!-- Style-ok implementálása -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
 
-    <body>
-        <!-- Bejelentkezési felület -->
-        <div id="user-data" class="container">
-            <div class="form-group">
-                <h1 class="display-4 text-center">Log In to Chat App</h1>
-                <div class="user-data-body">
-                    <input type="text" id="user-name" class="form-control" placeholder="User Name">
+    <title>Socket IO - Chat Web Application</title>
+</head>
+
+<body>
+    <!-- Bejelentkezési felület -->
+    <div id="user-data" class="container">
+        <div class="form-group">
+            <h1 class="display-4 text-center">Log In to Chat App</h1>
+            <div class="user-data-body">
+                <input type="text" id="user-name" class="form-control" placeholder="User Name">
+            </div>
+            <a href="" id="login-chat" class="btn btn-primary">Login Chat</a>
+        </div>
+    </div>
+
+    <!-- Chat Felület -->
+    <div id="chat-main" class="container hidden">
+        <div class="row">
+            <div class="col-9 chat-title-box">
+                <h1 class="display-4 text-center">Chat</h1>
+            </div>
+            <div class="col-3">
+                <div class="on-title-box">
+                    <h1 class="display-4 text-center">Online Users</h1>
                 </div>
-                <a href="" id="login-chat" class="btn btn-primary">Login Chat</a>
+
+            </div>
+        </div>
+        <div id="main-inner" class="row">
+            <div id="chat-messages" class="col-9">
+                <!-- A publikus üzenetek megjelenítésére szolgáló DIV -->
+                <div id="public-chat" class="chatroom active">
+
+                </div>
+            </div>
+
+            <!-- Az online felhasználók megjelenítésére szolgáló DIV -->
+            <div id="user-list" class="col-3">
+                <div class="user-list-box">
+                    <ul>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <!-- Chat Felület -->
-        <div id="chat-main" class="container hidden">
-            <div class="row">
-                <div class="col-9 chat-title-box">
-                    <h1 class="display-4 text-center">Chat</h1>
-                </div>
-                <div class="col-3">
-                    <div class="on-title-box">
-                        <h1 class="display-4 text-center">Online Users</h1>
-                    </div>
-
-                </div>
-            </div>
-            <div id="main-inner" class="row">
-                <div id="chat-messages" class="col-9">
-                    <!-- A publikus üzenetek megjelenítésére szolgáló DIV -->
-                    <div id="public-chat" class="chatroom active">
-
-                    </div>
-                </div>
-
-                <!-- Az online felhasználók megjelenítésére szolgáló DIV -->
-                <div id="user-list" class="col-3">
-                    <div class="user-list-box">
-                        <ul>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- A szobákat fogja megjeleníteni (Egy private chat is egy "szoba" lesz) -->
-            <div class="row">
-                <div class="col-9">
-                    <div id="rooms" class="row rooms-box">
-                        <div id="main-room" class="active">
-                            Public Chat
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Az üzenet küldési input mezőt tároló DIV -->
-            <div id="row" class="row">
-                <div class="col-9">
-                    <div class="row message-text-box">
-                        <textarea id="message-text" cols="30" rows="10" class="form-control" placeholder="Write Chat Message"></textarea>
+        <!-- A szobákat fogja megjeleníteni (Egy private chat is egy "szoba" lesz) -->
+        <div class="row">
+            <div class="col-9">
+                <div id="rooms" class="row rooms-box">
+                    <div id="main-room" class="active">
+                        Public Chat
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="modal fade" id="warningModal" tabindex="-1" role="dialog" aria-labelledby="warningModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="warningModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div>
+        <!-- Az üzenet küldési input mezőt tároló DIV -->
+        <div id="row" class="row">
+            <div class="col-9">
+                <div class="row message-text-box">
+                    <textarea id="message-text" cols="30" rows="10" class="form-control"
+                        placeholder="Write Chat Message"></textarea>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Script-ek implementálása -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <div class="modal fade" id="warningModal" tabindex="-1" role="dialog" aria-labelledby="warningModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="warningModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <script src="assets/js/common/operations/modal/modal-operation.js"></script>
-        <script src="assets/js/index.js"></script>
-        <script src="assets/js/client.js"></script>
-    </body>
+    <!-- Script-ek implementálása -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+    <script src="assets/js/common/operations/modal/modal-operation.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/client.js"></script>
+</body>
+
 </html>

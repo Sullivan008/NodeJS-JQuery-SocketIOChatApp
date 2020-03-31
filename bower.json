@@ -1,0 +1,16 @@
+{
+    "name": "socket-io-chat-app",
+    "version": "1.0.0",
+    "homepage": "https://github.com/Sullivan008/SocketIOChatApp",
+    "authors": [
+        "Peter Kozak <kozakpeter0424@gmail.com>"
+    ],
+    "description": "SocketIO - RealTime Chat Web Application",
+    "main": "public/index.html",
+    "dependencies": {
+        "bootstrap":"4.3.1",
+        "jquery":"3.4.1",
+        "moment":"2.24.0",
+        "socket.io-client":"2.2.0"
+    }
+}
