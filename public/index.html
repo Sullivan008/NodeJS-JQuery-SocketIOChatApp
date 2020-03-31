@@ -4,14 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="stylesheet" href="assets/css/site.css">
-
     <title>Socket IO - Chat Web Application</title>
 </head>
 
 <body>
-    <!-- Bejelentkezési felület -->
     <div id="user-data" class="container">
         <div class="form-group">
             <h1 class="display-4 text-center">Log In to Chat App</h1>
@@ -22,7 +19,6 @@
         </div>
     </div>
 
-    <!-- Chat Felület -->
     <div id="chat-main" class="container hidden">
         <div class="row">
             <div class="col-9 chat-title-box">
@@ -37,13 +33,10 @@
         </div>
         <div id="chat-room" class="row">
             <div id="chat-messages" class="col-9">
-                <!-- A publikus üzenetek megjelenítésére szolgáló DIV -->
                 <div id="public-chat" class="chatroom active">
-
                 </div>
             </div>
 
-            <!-- Az online felhasználók megjelenítésére szolgáló DIV -->
             <div id="user-list" class="col-3">
                 <div class="user-list-box">
                     <ul>
@@ -52,7 +45,6 @@
             </div>
         </div>
 
-        <!-- A szobákat fogja megjeleníteni (Egy private chat is egy "szoba" lesz) -->
         <div class="row">
             <div class="col-9">
                 <div id="rooms" class="row rooms-box">
@@ -63,7 +55,6 @@
             </div>
         </div>
 
-        <!-- Az üzenet küldési input mezőt tároló DIV -->
         <div id="row" class="row">
             <div class="col-9">
                 <div class="row message-text-box">
@@ -93,7 +84,6 @@
         </div>
     </div>
 
-    <!-- Script-ek implementálása -->
     <script src="assets/js/site.js"></script>
 
     <script src="assets/js/common/operations/modal/modal-operation.js"></script>
