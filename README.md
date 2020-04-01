@@ -1,13 +1,58 @@
-# SocketIO - RealTime Chat Web Application
+# NodeJS - SocketIO - JQuery - RealTime Chat Web Application [Year of Development: 2019 and 2020]
 
 About the application technologies and operation:
 
 ### Technologies:
-- Programming Language: NodeJS (Client BackEnd Side)
-- Descriptive Language: HTML5
-- Style Description Language: CSS
-- Database: MongoDB
-- Other used modul: Express (NodeJS)
+- Programming Language: NodeJS
+- FrontEnd Side: JQuery (~3.4.1) - SocketIO Client (~2.2.0)
+- BackEnd Side: NodeJS (~10.16.3) - SocketIO Server (~2.2.0)
+- Descriptive Language: HTML5 
+- Style Description Language: CSS (Bootstrap ~4.3.1.)
+- Database: MongoDB (~3.2.7)
+- Other used modul: 
+  - Express Module (~4.17.1)
+  - Moment (~2.24.0)
+  - Nodemon (~1.19.4)
+  - Bower (~1.8.8)
+  - Gulp (~3.9.1)
+  - Laravel-Elixir (6.0.0-18)
+- Other uses: 
+  - **.bowerrc** file: *This file contains the path to wich folder to "Copy" or "Install" when downloading dependencies from GIT BASH*
+  - **bower.json** file: *Packages and dependencies with version numbers are defined by a manifest file bower.json. **(Package Example: jquery": "~3.4)***
+  - **package.json** file: *Lists the packages your project depends on and specifies versions of a package that your project can use using semantic versioning rules*
+  - **gulpfile.js** file: *gulpfile.js combines the SCSS styles defined in Gulp with application dependency packages (JS dependencies). Mixed files are placed in the specified path.*
+
+### Installation/ Configuration:
+
+1. Restore necessary **node_modules**, so run the following command in **GIT Bash Console** in the application root directory
+
+   ```
+   - npm install
+   ```
+
+2. Restore necessary application packages and dependencies, so run the following command in **GIT Bash Console** in the application root directory
+
+   ```
+   - bower install
+   ```
+   
+3. Restore necessary **CSS** and **JS** public files under **public/assets** folder, so run the following command in **GIT Bash Console** in the application root directory
+
+   ```
+   - gulp
+   ```
+
+4. Start the application server side, so run the following command in **GIT Bash Console** in the application root directory
+
+   ```
+   - nodemon app/server.js
+   ``` 
+
+5. If the nodemon bach command not found, run the following command in **GIT Bash Console** in the application root directory
+
+   ```
+   - npm install -g nodemon
+   ```  
 
 ### About the application:
 - The application allows for real time communication between more people, either as a common chat room or as a Private Chat between some logged in clients.
